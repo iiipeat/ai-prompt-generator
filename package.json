@@ -1,0 +1,30 @@
+{
+  "name": "ai-prompt-generator",
+  "version": "1.0.0",
+  "description": "A free AI prompt generator using Claude API",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev --listen 4000",
+    "build": "echo 'No build step required for static site'",
+    "start": "vercel dev"
+  },
+  "keywords": [
+    "ai",
+    "prompts",
+    "claude",
+    "chatgpt",
+    "midjourney",
+    "prompt-engineering"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.2"
+  },
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

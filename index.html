@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Free AI Prompt Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🧠</span>
+                <span class="logo-text">FEEDOUGH<span class="logo-sub">The entrepreneurs' guide</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Categories</a>
+                <a href="#" class="nav-link">For Startups</a>
+                <a href="#" class="nav-link">AI Tools</a>
+                <button class="join-btn">Join AI Community</button>
+                <button class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <h1 class="main-title">The Free AI Prompt Generator</h1>
+        
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="chatgpt">ChatGPT Prompt Generator</button>
+                <button class="tab-btn" data-tab="midjourney">Midjourney Prompt Generator</button>
+                <button class="tab-btn" data-tab="optimizer">Prompt Optimiser</button>
+                <button class="tab-btn" data-tab="claude">Claude Prompt Generator</button>
+            </div>
+
+            <div class="content-container">
+                <div class="input-section">
+                    <textarea 
+                        id="prompt-input" 
+                        placeholder="I want a prompt that will..."
+                        rows="8"
+                    ></textarea>
+                    
+                    <div class="controls">
+                        <select id="prompt-type" class="dropdown">
+                            <option value="standard">Standard Prompt - For general use prompt generation</option>
+                            <option value="creative">Creative Prompt - For artistic and creative tasks</option>
+                            <option value="technical">Technical Prompt - For coding and technical tasks</option>
+                            <option value="business">Business Prompt - For business and marketing tasks</option>
+                            <option value="educational">Educational Prompt - For learning and teaching</option>
+                        </select>
+                        
+                        <button id="generate-btn" class="generate-btn">Generate</button>
+                    </div>
+                </div>
+
+                <div class="suggestions-section">
+                    <div class="suggestions-header">
+                        <h3>Quick Suggestions</h3>
+                        <button class="collapse-btn">−</button>
+                    </div>
+                    
+                    <div class="suggestions-grid">
+                        <button class="suggestion-btn" data-suggestion="Write a professional">Write a professional</button>
+                        <button class="suggestion-btn" data-suggestion="Draft technical">Draft technical</button>
+                        <button class="suggestion-btn" data-suggestion="Create a marketing">Create a marketing</button>
+                        <button class="suggestion-btn" data-suggestion="Explain complex">Explain complex</button>
+                        <button class="suggestion-btn" data-suggestion="Generate creative">Generate creative</button>
+                        <button class="suggestion-btn" data-suggestion="Analyze data">Analyze data</button>
+                        <button class="suggestion-btn" data-suggestion="Write code for">Write code for</button>
+                        <button class="suggestion-btn" data-suggestion="Summarize content">Summarize content</button>
+                    </div>
+                </div>
+
+                <div class="output-section" id="output-section" style="display: none;">
+                    <h3>Generated Prompt:</h3>
+                    <div class="output-content">
+                        <div id="generated-prompt"></div>
+                        <div class="output-actions">
+                            <button id="copy-btn" class="action-btn">📋 Copy</button>
+                            <button id="regenerate-btn" class="action-btn">🔄 Regenerate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loading-section" id="loading-section" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <p>Generating your optimized prompt...</p>
+                </div>
+
+                <div class="error-section" id="error-section" style="display: none;">
+                    <div class="error-content">
+                        <p id="error-message">Something went wrong. Please try again.</p>
+                        <button id="retry-btn" class="action-btn">Try Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ads-placeholder">
+            <div class="ad-content">
+                <h4>The easy and effective CRM</h4>
+                <button class="ad-btn">Try it free</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
