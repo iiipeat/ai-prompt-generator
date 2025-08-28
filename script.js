@@ -192,25 +192,42 @@ class PromptGenerator {
     async callAPI(userInput) {
         const promptType = this.elements.promptType.value;
         
-        const response = await fetch('/api/generate', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
+        // Client-side prompt generation
+        return this.generatePromptClientSide(userInput, promptType, this.currentTab);
+    }
+
+    generatePromptClientSide(userInput, promptType, targetPlatform) {
+        const templates = {
+            chatgpt: {
+                creative: `You are a creative assistant. ${userInput}. Please provide a detailed, imaginative, and engaging response that includes specific examples, creative suggestions, and actionable steps. Be thorough and helpful while maintaining a conversational tone.`,
+                technical: `You are an expert technical consultant. ${userInput}. Please provide a comprehensive technical analysis with step-by-step explanations, best practices, potential challenges, and recommended solutions. Include relevant examples and implementation details.`,
+                business: `You are a business strategy expert. ${userInput}. Please provide strategic insights, market analysis, actionable recommendations, and potential ROI considerations. Structure your response with clear priorities and implementation timelines.`,
+                educational: `You are an educational specialist. ${userInput}. Please explain this topic in a clear, structured way with examples, analogies, and practical applications. Break down complex concepts and provide learning objectives and assessment methods.`
             },
-            body: JSON.stringify({
-                userInput,
-                promptType,
-                targetPlatform: this.currentTab
-            })
-        });
+            claude: {
+                creative: `I need help with a creative task. ${userInput}. Please provide innovative solutions, multiple perspectives, and detailed creative approaches. Include specific examples and implementation strategies.`,
+                technical: `I need technical expertise for: ${userInput}. Please provide thorough technical analysis, code examples where relevant, best practices, and step-by-step implementation guidance.`,
+                business: `I need business consulting on: ${userInput}. Please analyze this from multiple business angles, provide strategic recommendations, risk assessments, and actionable next steps with timelines.`,
+                educational: `I need educational content about: ${userInput}. Please create comprehensive learning material with clear explanations, examples, exercises, and assessment criteria.`
+            },
+            midjourney: {
+                creative: `Create a stunning visual: ${userInput}. Style: photorealistic, highly detailed, professional photography, dramatic lighting, vibrant colors, 8K resolution, award-winning composition`,
+                technical: `Technical visualization: ${userInput}. Style: technical diagram, blueprint aesthetic, clean lines, professional documentation style, high contrast, detailed annotations, technical accuracy`,
+                business: `Professional business visual: ${userInput}. Style: corporate, clean, modern, professional photography, business environment, high quality, polished, executive presentation style`,
+                educational: `Educational illustration: ${userInput}. Style: clear, informative, diagram-style, educational poster, bright colors, easy to understand, classroom appropriate, detailed labels`
+            },
+            optimizer: {
+                creative: `Original prompt: "${userInput}"\n\nOptimized creative prompt: Enhance this prompt by adding more specific creative details, emotional context, artistic style references, and clearer outcome expectations. Include specific examples and creative constraints that will lead to more engaging and original results.`,
+                technical: `Original prompt: "${userInput}"\n\nOptimized technical prompt: Improve this prompt by adding technical specifications, implementation requirements, performance criteria, error handling considerations, and specific deliverables. Include relevant frameworks, methodologies, and success metrics.`,
+                business: `Original prompt: "${userInput}"\n\nOptimized business prompt: Enhance this prompt by adding market context, stakeholder considerations, success metrics, timeline requirements, and strategic alignment. Include specific business outcomes and measurable objectives.`,
+                educational: `Original prompt: "${userInput}"\n\nOptimized educational prompt: Improve this prompt by adding learning objectives, target audience specifications, assessment criteria, practical applications, and engagement strategies. Include specific educational outcomes and progression markers.`
+            }
+        };
 
-        if (!response.ok) {
-            const errorData = await response.json().catch(() => ({}));
-            throw new Error(errorData.error || `HTTP ${response.status}: ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        return data.generatedPrompt;
+        const platformTemplates = templates[targetPlatform] || templates.chatgpt;
+        const selectedTemplate = platformTemplates[promptType] || platformTemplates.creative;
+        
+        return selectedTemplate;
     }
 
     showLoading() {
