@@ -1,11 +1,8 @@
 {
   "functions": {
     "api/generate.js": {
-      "runtime": "nodejs18.x"
+      "runtime": "nodejs20.x"
     }
-  },
-  "env": {
-    "CLAUDE_API_KEY": "@claude_api_key"
   },
   "headers": [
     {
