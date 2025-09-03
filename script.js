@@ -295,6 +295,18 @@ class PromptGenerator {
 // Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new PromptGenerator();
+    
+    // Check if a template was selected from the templates page
+    const selectedTemplate = localStorage.getItem('selectedTemplate');
+    if (selectedTemplate) {
+        const promptInput = document.getElementById('prompt-input');
+        if (promptInput) {
+            promptInput.value = selectedTemplate;
+            promptInput.focus();
+        }
+        // Clear the stored template
+        localStorage.removeItem('selectedTemplate');
+    }
 });
 
 // Add some utility functions for enhanced user experience
