@@ -38,9 +38,14 @@
     }
     </script>
     
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
-         crossorigin="anonymous"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -67,38 +72,8 @@
         </ol>
     </nav>
 
-    <!-- Header Ad Zone -->
-    <div class="ad-zone ad-header">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
-             crossorigin="anonymous"></script>
-        <!-- Header Leaderboard -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
-             data-ad-slot="HEADER_AD_SLOT_ID"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
 
     <main class="main-container">
-        <!-- Left Sidebar Ad Zone -->
-        <aside class="ad-sidebar ad-left">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
-                 crossorigin="anonymous"></script>
-            <!-- Left Sidebar -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
-                 data-ad-slot="LEFT_SIDEBAR_AD_SLOT_ID"
-                 data-ad-format="rectangle"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </aside>
 
         <div class="content-wrapper">
             <div class="templates-hero">
@@ -169,21 +144,6 @@
                 </div>
             </div>
 
-            <!-- In-Content Ad Zone -->
-            <div class="ad-zone ad-inline">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
-                     crossorigin="anonymous"></script>
-                <!-- In-Content Ad -->
-                <ins class="adsbygoogle"
-                     style="display:block; text-align:center;"
-                     data-ad-layout="in-article"
-                     data-ad-format="fluid"
-                     data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
-                     data-ad-slot="INLINE_AD_SLOT_ID"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
 
             <!-- Writing & Content Tools Section -->
             <div class="template-category-section" id="writing-section">
@@ -411,56 +371,8 @@
             </div>
         </div>
 
-        <!-- Right Sidebar Ad Zone -->
-        <aside class="ad-sidebar ad-right">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
-                 crossorigin="anonymous"></script>
-            <!-- Right Sidebar -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
-                 data-ad-slot="RIGHT_SIDEBAR_AD_SLOT_ID"
-                 data-ad-format="rectangle"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </aside>
     </main>
 
-    <!-- Footer Ad Zone -->
-    <div class="ad-zone ad-footer">
-        <div class="ad-footer-grid">
-            <div class="footer-ad-unit">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
-                     crossorigin="anonymous"></script>
-                <!-- Footer Ad 1 -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
-                     data-ad-slot="FOOTER_AD_1_SLOT_ID"
-                     data-ad-format="rectangle"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-            <div class="footer-ad-unit">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
-                     crossorigin="anonymous"></script>
-                <!-- Footer Ad 2 -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
-                     data-ad-slot="FOOTER_AD_2_SLOT_ID"
-                     data-ad-format="rectangle"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
     <script>
@@ -502,6 +414,5 @@
             });
         });
     </script>
-    <script src="cookie-consent.js"></script>
 </body>
 </html>
